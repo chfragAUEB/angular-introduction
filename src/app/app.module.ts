@@ -13,6 +13,7 @@ import { ComponentInputComponent } from './component-input/component-input.compo
 import { SimpleTable0Component } from './component-input/simple-table0/simple-table0.component';
 import { ComponentInputOutputComponent } from './component-input-output/component-input-output.component';
 import { SimpleTable1Component } from './component-input-output/simple-table1/simple-table1.component';
+import { TemplateFormsComponent } from './template-forms/template-forms.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SimpleTable1Component } from './component-input-output/simple-table1/si
     SimpleTable0Component,
     ComponentInputOutputComponent,
     SimpleTable1Component,
+    TemplateFormsComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

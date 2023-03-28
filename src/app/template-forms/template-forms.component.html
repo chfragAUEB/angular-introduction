@@ -1,0 +1,31 @@
+<div class="border border-2 border-secondary">
+  <div class="bg-info text-center">template-forms.component</div>
+  <div class="p-2 row">
+    <div class="col">
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <p>
+          <label for="firstName" class="form-label">First Name</label>
+          <input name="firstName" type="text" class="form-control" ngModel />
+        </p>
+        <p>
+          <label for="lastName" class="form-label">Last Name</label>
+          <input name="lastName" type="text" class="form-control" ngModel />
+        </p>
+        <p>
+          <label for="age" class="form-label">Age</label>
+          <input name="age" type="number" class="form-control" ngModel />
+        </p>
+        <p>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div class="col">
+      <p *ngIf="!users.length">No users so far</p>
+      <app-simple-table0
+        *ngIf="users.length"
+        [userData]="users"
+      ></app-simple-table0>
+    </div>
+  </div>
+</div>
