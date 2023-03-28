@@ -1,2 +1,18 @@
-<h1>Welcome to Angular!</h1>
-<p>Nice to meet you {{ name }}</p>
+<div class="m-4 border border-2 border-primary">
+  <div class="bg-info text-center">app.component</div>
+  <div class="p-2 d-flex flex-column gap-2">
+    <h1>Welcome to Angular!</h1>
+    <p>
+      This is the <span class="fw-bold">{{ title }}</span> application
+    </p>
+
+    <div class="row">
+      <div class="col"><app-greeting></app-greeting></div>
+      <div class="col"><app-greeting></app-greeting></div>
+    </div>
+
+    <app-one-way-bind></app-one-way-bind>
+
+    <app-event-bind></app-event-bind>
+  </div>
+</div>

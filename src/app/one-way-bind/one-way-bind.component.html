@@ -1,0 +1,28 @@
+<div class="border border-2 border-secondary">
+  <div class="bg-info text-center">one-way-bind.component</div>
+
+  <div class="row m-2">
+    <div class="col">
+      <!-- using one way binding -->
+      <img [alt]="imageALT" [title]="imageTooltip" [src]="imageURL" />
+      <button [disabled]="buttonDisabled" class="mt-2 btn btn-primary">
+        {{ buttonPrompt }}
+      </button>
+    </div>
+
+    <div class="col">
+      <!-- using value interpolation -->
+      <img
+        alt="{{ imageALT }}"
+        title="{{ imageTooltip }}"
+        src="{{ imageURL }}"
+      />
+      <button
+        disabled="{{ buttonDisabled ? 'disabled' : null }}"
+        class="mt-2 btn btn-primary"
+      >
+        {{ buttonPrompt }}
+      </button>
+    </div>
+  </div>
+</div>

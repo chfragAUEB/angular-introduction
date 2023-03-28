@@ -1,0 +1,37 @@
+<div class="border border-2 border-secondary">
+  <div class="bg-info text-center">event-bind.component</div>
+
+  <div class="row mt-2 p-2">
+    <div class="col">
+      <p>Button is clicked {{ times }} times</p>
+    </div>
+
+    <div class="col">
+      <button (click)="onPrimaryClick()" class="btn btn-primary">
+        Click me
+      </button>
+    </div>
+
+    <div class="col">
+      <button (click)="resetCounter()" class="ms-2 btn btn-danger">
+        Reset counter
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-2 p-2">
+    <div class="col">{{ userInput }}</div>
+    <div class="col">
+      <input
+        (input)="onUserInput($event)"
+        [value]="userInput"
+        class="form-control"
+      />
+    </div>
+    <div class="col">
+      <button (click)="resetUserInput()" class="btn btn-danger">
+        Reset input
+      </button>
+    </div>
+  </div>
+</div>
