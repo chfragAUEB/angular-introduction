@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface User {
+export interface User {
   firstName: string;
   lastName: string;
   age: number;
