@@ -11,6 +11,8 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
 import { TemplateVariablesComponent } from './template-variables/template-variables.component';
 import { ComponentInputComponent } from './component-input/component-input.component';
 import { SimpleTable0Component } from './component-input/simple-table0/simple-table0.component';
+import { ComponentInputOutputComponent } from './component-input-output/component-input-output.component';
+import { SimpleTable1Component } from './component-input-output/simple-table1/simple-table1.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { SimpleTable0Component } from './component-input/simple-table0/simple-ta
     TemplateVariablesComponent,
     ComponentInputComponent,
     SimpleTable0Component,
+    ComponentInputOutputComponent,
+    SimpleTable1Component,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
