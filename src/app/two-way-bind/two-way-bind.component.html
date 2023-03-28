@@ -1,0 +1,15 @@
+<div class="border border-2 border-secondary">
+  <div class="bg-info text-center">two-way-bind.component</div>
+
+  <div class="row mt-2 mb-2">
+    <div class="col">{{ userInput }}</div>
+    <div class="div col">
+      <input type="text" class="form-control" [(ngModel)]="userInput" />
+    </div>
+    <div class="col">
+      <button (click)="resetUserInput()" class="btn btn-danger">
+        Reset input
+      </button>
+    </div>
+  </div>
+</div>
