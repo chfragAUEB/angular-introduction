@@ -7,6 +7,9 @@ import { GreetingComponent } from './greeting/greeting.component';
 import { OneWayBindComponent } from './one-way-bind/one-way-bind.component';
 import { EventBindComponent } from './event-bind/event-bind.component';
 import { TwoWayBindComponent } from './two-way-bind/two-way-bind.component';
+import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { TemplateVariablesComponent } from './template-variables/template-variables.component';
+import { ComponentInputComponent } from './component-input/component-input.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { TwoWayBindComponent } from './two-way-bind/two-way-bind.component';
     OneWayBindComponent,
     EventBindComponent,
     TwoWayBindComponent,
+    StructuralDirectivesComponent,
+    TemplateVariablesComponent,
+    ComponentInputComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
