@@ -1,0 +1,11 @@
+<div class="list-group">
+  <a
+    *ngFor="let entry of menuEntries"
+    (click)="onClick(entry.path)"
+    routerLink="{{ entry.path }}"
+    [ngClass]="{ active: active === entry.path }"
+    class="list-group-item list-group-item-action"
+  >
+    {{ entry.text }}
+  </a>
+</div>

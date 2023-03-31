@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { GreetingComponent } from './greeting/greeting.component';
@@ -14,6 +15,19 @@ import { SimpleTable0Component } from './component-input/simple-table0/simple-ta
 import { ComponentInputOutputComponent } from './component-input-output/component-input-output.component';
 import { SimpleTable1Component } from './component-input-output/simple-table1/simple-table1.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+
+const routes: Routes = [
+  { path: 'greeting', component: GreetingComponent },
+  { path: 'one-way-bind', component: OneWayBindComponent },
+  { path: 'event-bind', component: EventBindComponent },
+  { path: 'two-way-bind', component: TwoWayBindComponent },
+  { path: 'structural-directives', component: StructuralDirectivesComponent },
+  { path: 'template-variables', component: TemplateVariablesComponent },
+  { path: 'component-input', component: ComponentInputComponent },
+  { path: 'component-input-output', component: ComponentInputOutputComponent },
+  { path: 'template-forms', component: TemplateFormsComponent },
+];
 
 @NgModule({
   declarations: [
@@ -29,8 +43,9 @@ import { TemplateFormsComponent } from './template-forms/template-forms.componen
     ComponentInputOutputComponent,
     SimpleTable1Component,
     TemplateFormsComponent,
+    SideBarComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -3,3 +3,8 @@ export interface User {
   lastName: string;
   age: number;
 }
+
+export interface SideBar {
+  text: string;
+  path: string;
+}
