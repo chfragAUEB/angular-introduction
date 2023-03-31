@@ -1,0 +1,10 @@
+<div class="border border-2 border-secondary">
+  <div class="bg-info text-center">two-way-bind.component</div>
+
+  <div class="row mt-2 mb-2 p-2">
+    <div class="col">{{ userInput }}</div>
+    <div class="col">
+      <input type="text" class="form-control" [(ngModel)]="userInput" />
+    </div>
+  </div>
+</div>
