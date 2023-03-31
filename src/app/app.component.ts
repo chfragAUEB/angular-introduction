@@ -19,5 +19,6 @@ export class AppComponent {
     { text: 'Component Input', path: 'component-input' },
     { text: 'Component Input Output', path: 'component-input-output' },
     { text: 'Template Forms', path: 'template-forms' },
+    { text: 'Reactive Forms', path: 'reactive-forms' },
   ];
 }

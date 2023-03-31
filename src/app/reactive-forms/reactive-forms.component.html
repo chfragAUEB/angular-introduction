@@ -1,0 +1,94 @@
+<h5 class="p-2 bg-info">User Registration Form</h5>
+
+<div class="row">
+  <div class="col">
+    <form [formGroup]="form" class="d-flex flex-column gap-2">
+      <!-- first name -->
+      <div class="form-group">
+        <label for="firstName" class="col-form-label">First Name</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          formControlName="firstName"
+        />
+      </div>
+      <!-- last name -->
+      <div class="form-group">
+        <label for="lastName" class="col-form-label">Last Name</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          formControlName="lastName"
+        />
+      </div>
+      <!-- email -->
+      <div class="form-group">
+        <label for="email" class="col-form-label">Email</label>
+
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
+      </div>
+      <!-- password -->
+      <div class="form-group">
+        <label for="password" class="col-form-label">Password</label>
+
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+        />
+      </div>
+      <!-- repeat password -->
+      <div class="form-group">
+        <label for="repeatPassword" class="col-form-label"
+          >Repeat Password</label
+        >
+
+        <input
+          type="password"
+          class="form-control"
+          id="repeatPassword"
+          formControlName="repeatPassword"
+        />
+      </div>
+      <!-- submit -->
+      <div class="form-group">
+        <button (click)="onSubmit()" class="btn btn-primary">
+          Submit Form
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col">
+    <p>Form Valid: {{ form.valid }}</p>
+    <p>
+      First Name: {{ this.form.controls.firstName.value }} <br />
+      First Name Errors: {{ controlError("firstName") | json }}
+    </p>
+    <p>
+      Last Name: {{ this.form.controls.lastName.value }} <br />
+      Last Name Errors: {{ controlError("lastName") | json }}
+    </p>
+    <p>
+      Email: {{ this.form.controls.email.value }} <br />
+      Email Errors: {{ controlError("email") | json }}
+    </p>
+    <p>
+      Password: {{ this.form.controls.password.value }} <br />
+      Password Errors: {{ controlError("password") | json }}
+    </p>
+    <p>
+      Repeat Password: {{ this.form.controls.repeatPassword.value }} <br />
+      Repeat Password Errors: {{ controlError("repeatPassword") | json }}
+    </p>
+  </div>
+</div>

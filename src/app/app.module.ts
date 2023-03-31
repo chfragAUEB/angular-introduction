@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { ComponentInputOutputComponent } from './component-input-output/componen
 import { SimpleTable1Component } from './component-input-output/simple-table1/simple-table1.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 const routes: Routes = [
   { path: 'greeting', component: GreetingComponent },
@@ -27,6 +29,7 @@ const routes: Routes = [
   { path: 'component-input', component: ComponentInputComponent },
   { path: 'component-input-output', component: ComponentInputOutputComponent },
   { path: 'template-forms', component: TemplateFormsComponent },
+  { path: 'reactive-forms', component: ReactiveFormsComponent },
 ];
 
 @NgModule({
@@ -44,8 +47,14 @@ const routes: Routes = [
     SimpleTable1Component,
     TemplateFormsComponent,
     SideBarComponent,
+    ReactiveFormsComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
