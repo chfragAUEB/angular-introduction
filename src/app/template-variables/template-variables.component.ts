@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-template-variables',
@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./template-variables.component.css'],
 })
 export class TemplateVariablesComponent {
-  log(input: string) {
-    console.log(input);
+  // @ViewChild('userInput') userInput: ElementRef | undefined;
+  @ViewChild('userInput') userInput: any;
+  // log(input: string) {
+  //   console.log(input);
+  // }
+  log() {
+    // Detemine type during development ONLY
+    console.log(this.userInput.constructor.name);
+    if (this.userInput) {
+      const target = this.userInput.nativeElement as HTMLInputElement;
+      target.title = target.value;
+      console.log(target.value);
+    }
   }
 }

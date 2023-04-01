@@ -18,6 +18,8 @@ import { SimpleTable1Component } from './component-input-output/simple-table1/si
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'greeting', component: GreetingComponent },
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'component-input-output', component: ComponentInputOutputComponent },
   { path: 'template-forms', component: TemplateFormsComponent },
   { path: 'reactive-forms', component: ReactiveFormsComponent },
+  { path: '', component: WelcomeComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -48,6 +52,8 @@ const routes: Routes = [
     TemplateFormsComponent,
     SideBarComponent,
     ReactiveFormsComponent,
+    WelcomeComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
