@@ -40,7 +40,10 @@
   </div>
   <div class="row mt-2">
     <div class="col-3">
-      <app-side-bar [menuEntries]="sideBarMenu"></app-side-bar>
+      <app-side-bar
+        [menuEntries]="sideBarMenu"
+        [active]="currentPath"
+      ></app-side-bar>
     </div>
     <div class="col-9"><router-outlet></router-outlet></div>
   </div>

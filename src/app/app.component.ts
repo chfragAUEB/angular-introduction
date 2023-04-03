@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SideBar } from './app.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,4 +22,13 @@ export class AppComponent {
     { text: 'Template Forms', path: 'template-forms' },
     { text: 'Reactive Forms', path: 'reactive-forms' },
   ];
+
+  currentPath = '';
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      console.log(this.router.url.substring(1));
+      this.currentPath = this.router.url.substring(1);
+    });
+  }
 }
