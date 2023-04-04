@@ -8,3 +8,7 @@ export interface SideBar {
   text: string;
   path: string;
 }
+
+export interface Joke {
+  value: string;
+}

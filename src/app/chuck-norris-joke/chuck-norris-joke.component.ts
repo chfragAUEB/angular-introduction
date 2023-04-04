@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { AppService } from '../app.service';
+import { Joke } from '../app.interfaces';
 
 @Component({
   selector: 'app-chuck-norris-joke',
@@ -7,16 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chuck-norris-joke.component.css'],
 })
 export class ChuckNorrisJokeComponent implements OnInit {
-  constructor(private http: HttpClient) {}
-  ngOnInit(): void {
-    this.getJoke();
+  joke = '';
+  constructor(private service: AppService) {}
+
+  @HostListener('keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    console.log('Key pressed:', event.key);
+    if (event.key === 'r') {
+      this.refreshJoke();
+    }
   }
 
-  getJoke() {
-    this.http
-      .get('https://api.chucknorris.io/jokes/random')
-      .subscribe((joke) => {
-        console.log(joke);
-      });
+  ngOnInit(): void {
+    this.service.getJoke().subscribe((joke: Joke) => {
+      console.log(joke.value);
+      this.joke = joke.value;
+    });
+  }
+
+  refreshJoke() {
+    this.service.getJoke().subscribe((joke: Joke) => (this.joke = joke.value));
   }
 }
