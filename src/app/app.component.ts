@@ -22,15 +22,15 @@ export class AppComponent {
     { text: 'Component Input Output', path: 'component-input-output' },
     { text: 'Template Forms', path: 'template-forms' },
     { text: 'Reactive Forms', path: 'reactive-forms' },
-    { text: 'Chuck Norris Joke', path: 'chuck-norris' },
+    { text: 'Chuck Norris Joke (HttpClient)', path: 'chuck-norris' },
   ];
 
   currentPath = '';
 
   constructor(private router: Router) {
     this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: Event) => {
+      // .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event) => {
         console.log(event.constructor.name, this.router.url.substring(1));
         this.currentPath = this.router.url.substring(1);
       });

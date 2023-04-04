@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { Joke } from '../app.interfaces';
 
@@ -9,24 +9,37 @@ import { Joke } from '../app.interfaces';
 })
 export class ChuckNorrisJokeComponent implements OnInit {
   joke = '';
+  categorizedJoke = '';
+  jokeCategories: string[] = [];
+  selectedCategory = '';
+
   constructor(private service: AppService) {}
 
-  @HostListener('keydown', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    console.log('Key pressed:', event.key);
-    if (event.key === 'r') {
-      this.refreshJoke();
-    }
-  }
-
   ngOnInit(): void {
-    this.service.getJoke().subscribe((joke: Joke) => {
+    this.service.getChuckNorrisJoke().subscribe((joke: Joke) => {
       console.log(joke.value);
       this.joke = joke.value;
     });
+    this.getJokeCategories();
   }
 
   refreshJoke() {
-    this.service.getJoke().subscribe((joke: Joke) => (this.joke = joke.value));
+    this.service
+      .getChuckNorrisJoke()
+      .subscribe((joke) => (this.joke = joke.value));
+  }
+
+  getJokeCategories() {
+    this.service.getChuckNorrisJokeCategories().subscribe((categories) => {
+      console.log(categories);
+      this.jokeCategories = categories;
+    });
+  }
+
+  selectCategory(category: string) {
+    this.selectedCategory = category;
+    this.service
+      .getChuckNorrisJokeFromCategory(this.selectedCategory)
+      .subscribe((joke) => (this.categorizedJoke = joke.value));
   }
 }

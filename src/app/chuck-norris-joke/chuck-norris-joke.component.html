@@ -1,7 +1,33 @@
-<div tabindex="0" class="card w-50">
+<div class="card w-50">
   <div class="card-header">A Chuck Norris Joke</div>
   <div class="card-body">
     <p>{{ joke }}</p>
-    <a (click)="refreshJoke()" role="button" class="card-link">Refresh</a>
+    <button (click)="refreshJoke()" class="card-link btn btn-primary mb-2">
+      Refresh
+    </button>
+
+    <div class="dropdown">
+      <a class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+        or select a category
+      </a>
+
+      <div class="dropdown-menu">
+        <a
+          (click)="selectCategory(category)"
+          *ngFor="let category of jokeCategories"
+          class="dropdown-item"
+          >{{ category }}</a
+        >
+      </div>
+    </div>
+
+    <div *ngIf="selectedCategory" class="mt-2 card">
+      <div class="card-body">
+        <h5 class="card-title">{{ selectedCategory }}</h5>
+        <p>
+          {{ categorizedJoke }}
+        </p>
+      </div>
+    </div>
   </div>
 </div>
