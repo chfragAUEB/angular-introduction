@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SideBar } from './app.interfaces';
-import { Router } from '@angular/router';
+import { Router, Event, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -27,9 +28,11 @@ export class AppComponent {
   currentPath = '';
 
   constructor(private router: Router) {
-    this.router.events.subscribe(() => {
-      console.log(this.router.url.substring(1));
-      this.currentPath = this.router.url.substring(1);
-    });
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: Event) => {
+        console.log(event.constructor.name, this.router.url.substring(1));
+        this.currentPath = this.router.url.substring(1);
+      });
   }
 }

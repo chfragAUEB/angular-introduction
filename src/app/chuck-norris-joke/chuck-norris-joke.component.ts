@@ -16,9 +16,6 @@ export class ChuckNorrisJokeComponent implements OnInit {
     this.http
       .get('https://api.chucknorris.io/jokes/random')
       .subscribe((joke) => {
-        {
-          iconURL, value;
-        }
         console.log(joke);
       });
   }
