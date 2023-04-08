@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-export interface User {
-  firstName: string;
-  lastName: string;
-  age: number;
-}
+import { User } from '../app.interfaces';
 
 @Component({
   selector: 'app-component-input-output',
@@ -19,8 +15,14 @@ export class ComponentInputOutputComponent {
     { firstName: 'Barb', lastName: 'White', age: 33 },
   ];
 
+  receivedUser: User | undefined;
+
   onDeleteUser(index: number) {
     console.log(index);
     this.userData.splice(index, 1);
+  }
+
+  onReceivedUser(user: User) {
+    this.receivedUser = user;
   }
 }

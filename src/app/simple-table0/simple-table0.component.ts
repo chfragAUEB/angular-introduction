@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../component-input.component';
+import { User } from '../app.interfaces';
 
 @Component({
   selector: 'app-simple-table0',

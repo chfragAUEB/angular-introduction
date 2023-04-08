@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <p>
+        <label for="firstName" class="form-label"> First Name</label>
+        <input type="text" name="firstName" class="form-control" ngModel />
+      </p>
+      <p>
+        <label for="lastName" class="form-label"> Last Name</label>
+        <input type="text" name="lastName" class="form-control" ngModel />
+      </p>
+      <p>
+        <label for="age" class="form-label"> Age</label>
+        <input type="number" name="age" class="form-control" ngModel />
+      </p>
+      <p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </p>
+    </form>
+  </div>
+  <div class="col">
+    <app-simple-table0 [userData]="users"></app-simple-table0>
+  </div>
+</div>
