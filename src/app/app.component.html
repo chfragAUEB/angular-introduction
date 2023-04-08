@@ -1,46 +1,37 @@
-<!-- <div class="m-4 border border-2 border-primary">
-  <div class="bg-info text-center">app.component</div>
-  <div class="p-2 d-flex flex-column gap-2">
-    <h1>Welcome to Angular!</h1>
-    <p>
-      This is the <span class="fw-bold">{{ title }}</span> application
-    </p>
-
-    <div class="row">
-      <div class="col"><app-greeting></app-greeting></div>
-      <div class="col"><app-greeting></app-greeting></div>
-    </div>
-
-    <app-one-way-bind></app-one-way-bind>
-
-    <app-event-bind></app-event-bind>
-
-    <app-two-way-bind></app-two-way-bind>
-
-    <app-template-variables></app-template-variables>
-
-    <app-structural-directives></app-structural-directives>
-
-    <app-component-input></app-component-input>
-
-    <app-component-input-output></app-component-input-output>
-  </div>
-</div> -->
-
 <div class="container mt-4">
   <div class="row">
-    <nav class="p-2 navbar navbar-light bg-light justify-content-between">
+    <nav
+      class="p-2 navbar navbar-expand navbar-light bg-light justify-content-between"
+    >
       <span class="navbar-brand">
         {{ title }}
       </span>
       <span> Coding Factory</span>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Bind Examples
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li *ngFor="let item of topBindExamplesMenu">
+              <a class="dropdown-item" routerLink="{{ item.path }}">{{
+                item.text
+              }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </nav>
   </div>
   <div class="row mt-2">
     <div class="col-3">
-      <!-- <p *ngFor="let item of sideBarMenu">
-        <a routerLink="{{ item.path }}">{{ item.text }}</a>
-      </p> -->
       <app-side-bar [menu]="sideBarMenu" [active]="currentPath"></app-side-bar>
     </div>
     <div class="col-9">
