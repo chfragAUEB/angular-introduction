@@ -31,3 +31,35 @@ Package                      Version
 @angular-devkit/schematics   16.2.6 (cli-only)
 @schematics/angular          16.2.6 (cli-only)
 ```
+
+Δημιουργία νέας εφαρμογής:
+
+```
+ng new angular-introduction --standalone
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? CSS
+            Standalone application structure is new and not yet supported by many existing 'ng add' and 'ng update' integrations with community libraries.
+CREATE angular-introduction/README.md (1073 bytes)
+CREATE angular-introduction/.editorconfig (274 bytes)
+CREATE angular-introduction/.gitignore (548 bytes)
+CREATE angular-introduction/angular.json (3020 bytes)
+CREATE angular-introduction/package.json (1051 bytes)
+CREATE angular-introduction/tsconfig.json (901 bytes)
+CREATE angular-introduction/tsconfig.app.json (263 bytes)
+CREATE angular-introduction/tsconfig.spec.json (273 bytes)
+CREATE angular-introduction/.vscode/extensions.json (130 bytes)
+CREATE angular-introduction/.vscode/launch.json (470 bytes)
+CREATE angular-introduction/.vscode/tasks.json (938 bytes)
+CREATE angular-introduction/src/main.ts (250 bytes)
+CREATE angular-introduction/src/favicon.ico (948 bytes)
+CREATE angular-introduction/src/index.html (305 bytes)
+CREATE angular-introduction/src/styles.css (80 bytes)
+CREATE angular-introduction/src/app/app.component.css (0 bytes)
+CREATE angular-introduction/src/app/app.component.html (23083 bytes)
+CREATE angular-introduction/src/app/app.component.spec.ts (930 bytes)
+CREATE angular-introduction/src/app/app.component.ts (319 bytes)
+CREATE angular-introduction/src/app/app.config.ts (117 bytes)
+CREATE angular-introduction/src/assets/.gitkeep (0 bytes)
+✔ Packages installed successfully.
+    Successfully initialized git.
+```
