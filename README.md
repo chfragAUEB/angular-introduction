@@ -4,8 +4,15 @@
 
 ```
 npm install -g @angular/cli@latest
+```
+
+Έλεγχος εγκατάστασης:
+
+```
 ng version
 ```
+
+Ενδεικτικό output:
 
 ```
      _                      _                 ____ _     ___
@@ -36,6 +43,11 @@ Package                      Version
 
 ```
 ng new angular-introduction --standalone
+```
+
+Ενδεικτικό output:
+
+```
 ? Would you like to add Angular routing? No
 ? Which stylesheet format would you like to use? CSS
             Standalone application structure is new and not yet supported by many existing 'ng add' and 'ng update' integrations with community libraries.
