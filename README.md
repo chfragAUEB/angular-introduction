@@ -1,5 +1,11 @@
 # Εισαγωγή στo Angular Framework
 
+## 5. Event Binding (template -> controller)
+
+- Click handlers
+- Input handler
+- Two way binding
+
 ## 4. \*ngFor Directive
 
 -
