@@ -1,5 +1,11 @@
 # Εισαγωγή στo Angular Framework
 
+## 3. Alternate component input
+
+- input | undefined
+- \*ngIf για εμφάνιση υπό συνθήκη στο template
+- ng-container & ng-template
+
 ## 2. Component input
 
 Δημιουργία interface για τα δεδομένα **τύπου Person**:
@@ -17,8 +23,7 @@ NOTE: The "--dry-run" option means no changes were made.
 - Μεταφορά δεδομένων του χαρακτηριστικού person πίσω στην κλάση `AppComponent`.
 - Δέσμευση του χαρακτηριστικού εισόδου `person` της κλάσης `PersonComponent` με το χαρακτηριστικό `person` της κλάσης `AppComponent`: Στο `app.component.html` χρησιμοποιούμε τα brackets `[...]`:
   ```html
-  ...
-  <app-person [person]="person"></app-person>
+  ... <app-person [person]="person"></app-person>
   ```
 
 ## 1. Δημιουργία νέου component
@@ -42,7 +47,6 @@ NOTE: The "--dry-run" option means no changes were made.
 - Διαπίστωση πως το css χρειάζεται επίσης να μεταφερθεί στο `person.component.css`.
 
 ## 0. Απλή δέσμευση χαρακτηριστικού
-
 
 - Απλή δέσμευση (simple binding) χαρακτηριστικού της κλάσης του component στο template του component.
 - Χρήση του placholder `{{<attribute_name>}}`.
@@ -124,4 +128,3 @@ CREATE angular-introduction/src/assets/.gitkeep (0 bytes)
 ✔ Packages installed successfully.
     Successfully initialized git.
 ```
-
