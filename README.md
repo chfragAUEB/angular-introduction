@@ -3,21 +3,26 @@
 ## 6. Component Output
 
 - Χρήση του decorator `@Output()` σε χαρακτηριστικό της κλάσης για τη δημιουργία custom event στο component. Συνδυάζεται με το interface `EventEmitter<T>` όπου `Τ` ο τύπος των δεδομένων που μεταδίδει το custom event.
-- To custom event συνήθως προκύπτει από ένα standard event στο template του component (π.χ. click πάνω σε ένα κουμπί).
+- To custom event συνήθως προκύπτει από ένα standard event στο template του component (πχ click πάνω σε ένα κουμπί).
 
-> Χρήση του `index` με το *ngFor (αυτόματη αρίθμηση με το `i` κατά τη διάσχιση του πίνακα):
->```html
+> Χρήση του `index` με το \*ngFor (αυτόματη αρίθμηση με το `i` κατά τη διάσχιση του πίνακα):
+>
+> ```html
 > <tr *ngFor="let user of userData; index as i">
->      <td>{{ i }}</td>
->```
+>   <td>{{ i }}</td>
+> </tr>
+> ```
 
 ## 5. Event Binding (data flow από το template προς τον controller)
 
 > Εγκατάσταση του Bootstrap στην εφαρμογή μας:
+>
 > ```
 > npm i bootstrap
 > ```
+>
 > Στη συνέχεια προσθέτουμε στο αρχείο `angular.json` στο block `projects > angular-introduction > architect > build > options`:
+>
 > ```json
 > ...
 > "styles": [
@@ -178,4 +183,3 @@ CREATE angular-introduction/src/assets/.gitkeep (0 bytes)
 ✔ Packages installed successfully.
     Successfully initialized git.
 ```
-
