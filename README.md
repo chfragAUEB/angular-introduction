@@ -5,7 +5,7 @@
 - Για κάθε event που μπορεί να συμβεί στο template έχουμε τη δυνατότητα να δεσμεύσουμε σε αυτό μια μέθοδο της κλάσης του component. Τα events δεσμεύονται αν περικλείσουμε το όνομά τους σε παρενθέσεις, π.χ. `(click)="onClick()"`. Οι μέθοδοι που δεσμεύονται με τα events λέγονται _envent handlers_.
 - Στα κουμπιά του template μπορούμε μπορούμε να δεσμεύσουμε τον ίδιο ή διαφορετικούς click handlers.
 - Χρήση του `(input)="onInput($event)"` στην περίπτωση που πρέπει να μεταφέρουμε πίσω στον controller τα δεδομένα που πληκτρολόγησε ο χρήστης (περνά πίσω στον input handler to πλήρες event). Για να εξάγουμε τα δεδομένα στον controller:
-  ```html
+  ```typescript
   onUserInput(event: Event) {
     const target = event.target as HTMLInputElement;
     this.userInput = target.value;
