@@ -7,8 +7,9 @@
 
 > Χρήση του `index` με το *ngFor (αυτόματη αρίθμηση με το `i` κατά τη διάσχιση του πίνακα:
 > ```html
-> <tr *ngFor="let user of userData; index as i">
->      <td>{{ i }}</td>
+> ...<tr *ngFor="let user of userData; index as i">
+>      <td>{{ i }}</td> ...
+> ```
 
 ## 5. Event Binding (data flow από το template προς τον controller)
 
