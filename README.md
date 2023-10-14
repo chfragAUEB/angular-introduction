@@ -6,7 +6,7 @@
 > ```
 > npm i bootstrap
 > ```
-> Στη συνέχεια προσθέτουμε στο αρχείο `angular.json`:
+> Στη συνέχεια προσθέτουμε στο αρχείο `angular.json` στο block `projects > angular-introduction > architect > build > options`:
 > ```json
 > ...
 > "styles": [
