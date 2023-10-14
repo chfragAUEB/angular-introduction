@@ -1,14 +1,19 @@
 # Εισαγωγή στo Angular Framework
 
-## 4. \*ngFor Directive
+## 4. `*ngFor` directive
 
--
+- Στα templates μπορούμε να επαναλάβουμε την εμφάνιση οποιουδήποτε HTML tag που μπορεί να είναι και component selector με τη χρήση του directive `*ngFor`:
+  ```html
+  <app-person-alt *ngFor="let user of users" [person]="user"></app-person-alt>
+  ```
+- Διατρέχει τον πίνακα `users` και σε κάθε επανάληψη η μεταβλητή `user` περιέχει το τρέχον αντικείμενο που περνά σαν input στην κλάση `PersonAltComponent`.
 
-## 3. Alternate component input
+## 3. Alternate component input - `*ngIf` directive
 
-- input | undefined
-- \*ngIf για εμφάνιση υπό συνθήκη στο template
-- ng-container & ng-template
+- Η αρχικοποίηση ενός input σε ένα componnent γίνεται συνήθως με τον τύπο `<Τype>|undefined` (αν περαστούν δεδομένα θα έχουν τον τύπο τους αλλιώς το input είναι `undefined`).
+- Για να εμφανίσουμε ή αποκρύψουμε στο template υπό μια συνθήκη χρησιμοποιούμε το `*ngIf` directive.
+- Με το `<ng-container>` ομαδοποιούμε κώδικα HTML σε block που πάνω του μπορεί να εφαρμοστεί το `*ngIf` (το ίδιο μπορεί να γίνει αν περικλείσουμε τον HTML κώδικα με `<div>`).
+- To `*ngIf` μπορεί να πάρει `else` προς ένα `#id` ενός HTML block που περικλείεται από το `<ng-template>`. Σε ένα template μπορεί να υπάρχουν πολλά `<ng-template>` blocks με διαφορετικά `#id`s.
 
 ## 2. Component input
 
