@@ -13,6 +13,24 @@
 > </tr>
 > ```
 
+- Δεσμεύουμε τα custom events ενός child component δημιουργώντας event handlers όπως ακριβώς με τα standard events. Π.χ. στο template του parent component:
+
+  ```html
+  <app-output-demo [userData]="users" (deleteUser)="onDeleteUser($event)" (sendUser)="onSendUser($event)"> </app-output-demo>
+  ```
+
+- Στη συνέχεια δημιουργούμε στην κλάση του parent component τους event handlers:
+
+  ```typescript
+  onDeleteUser(i: number) {
+    this.users.splice(i, 1);
+  }
+
+  onSendUser(user: Person) {
+    this.sentUser = user;
+  }
+  ```
+
 ## 5. Event Binding (data flow από το template προς τον controller)
 
 > Εγκατάσταση του Bootstrap στην εφαρμογή μας:
