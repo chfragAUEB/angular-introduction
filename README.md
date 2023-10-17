@@ -1,5 +1,28 @@
 # Εισαγωγή στo Angular Framework
 
+## 9. Http Client
+
+- npm i -g json-server
+- create users.json from users table, added id field
+- json-server --watch users.json
+- ng generate service app --dry-run
+  CREATE src/app/app.service.spec.ts (342 bytes)
+  CREATE src/app/app.service.ts (132 bytes)
+- Για να μπορέσουμε να χρησιμοποιήσουμε το HttpClient πρέπει να το προσθέσουμε στο app.config.ts:
+
+  ```typescript
+  import { ApplicationConfig, importProvidersFrom } from "@angular/core";
+  import { HttpClientModule } from "@angular/common/http";
+
+  export const appConfig: ApplicationConfig = {
+    providers: [importProvidersFrom(HttpClientModule)],
+  };
+  ```
+
+- Get all users στο app.service
+- Constructor inject app service στο app component
+- Αρχικοποίηση του πίνακα user στο ngOnInit
+
 ## 8. Reactive forms
 
 -
