@@ -1,8 +1,22 @@
 # Εισαγωγή στo Angular Framework
 
+## 11. CRUD users: List Users
+
+- Δημιουργία component που εμφανίζει όλους τους χρήστες "της βάσης του json-server"
+- Χρησιμοποιεί το `AppService` στο `ngOnInit` για να λάβει δεδομένα από "τη βάση" και να τα θέσει σαν τιμή του χαρακτηριστικού `users`.
+
 ## 10. CRUD users scaffolding
 
--
+- Δημιουργία υποεφαρμογής "CRUD χρηστών" στον κατάλογο `crud-demo`:
+  ```
+  ng g c crud-demo/crud-demo
+  ng g c crud-demo/create-user
+  ng g c crud-demo/read-user
+  ng g c crud-demo/update-user
+  ng g c crud-demo/delete-user
+  ng g c crud-demo/list-users
+  ```
+- Χρήση του `<ng-container>`, `[ngSwitch]`, `*ngSwitchCase` και συνδυασμός τους με τον click handler ενός dropdown για την πλοήγηση ανάμεσα στα component παιδιά.
 
 ## 9. Http Client
 
