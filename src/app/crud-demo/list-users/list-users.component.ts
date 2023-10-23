@@ -12,10 +12,10 @@ import { Person } from 'src/app/interfaces/person';
 })
 export class ListUsersComponent implements OnInit {
   users: Person[] = [];
-  constructor(private service: AppService = Inject(AppService)) {}
+  constructor(private appService: AppService = Inject(AppService)) {}
 
   ngOnInit(): void {
-    this.service.getAllUsers().subscribe((users) => {
+    this.appService.getAllUsers().subscribe((users) => {
       this.users = users;
     });
   }
