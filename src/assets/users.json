@@ -91,15 +91,6 @@
       "id": 11
     },
     {
-      "givenName": "George",
-      "surName": "Fragkoudakis",
-      "age": 19,
-      "email": "george@ecample.com",
-      "address": "Palini, Greece",
-      "photoURL": "https://i.pravatar.cc/?img=34",
-      "id": 12
-    },
-    {
       "givenName": "Peter",
       "surName": "Jackson",
       "age": 56,
