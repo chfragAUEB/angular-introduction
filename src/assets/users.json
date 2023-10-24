@@ -107,33 +107,6 @@
       "address": "New Zeland",
       "photoURL": "https://i.pravatar.cc/?img=44",
       "id": 13
-    },
-    {
-      "givenName": "Kostas",
-      "surName": "Papadopoulos",
-      "age": "33",
-      "email": "kostas@example.com",
-      "address": "Athens, Greece",
-      "photoURL": "",
-      "id": 14
-    },
-    {
-      "givenName": "ffffff",
-      "surName": "fffff",
-      "age": "22",
-      "email": "wed@ads",
-      "address": "sdadsa",
-      "photoURL": "asd",
-      "id": 15
-    },
-    {
-      "givenName": "nnnnn",
-      "surName": "nnnnn",
-      "age": "44",
-      "email": "dfs@fds",
-      "address": "sfddsf",
-      "photoURL": "",
-      "id": 16
     }
   ]
 }
