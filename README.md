@@ -1,10 +1,30 @@
 # Εισαγωγή στo Angular Framework
 
-## 13. Create
+## 13. CRUD users: Create User
+
+- Άμεση χρήση του παραδείγματος της Reactive Form από το branch 08-Reactive-Forms
 
 ## 12. CRUD users: Read User
 
-- Πρόσβαση σε template variable μέσω του @ViewChild
+- Πρόσβαση σε template variable μέσω του `@ViewChild`:
+  ```typescript
+  @ViewChild('userId') userIdInput!: ElementRef<HTMLInputElement>;
+  ...
+  const id = this.userIdInput.nativeElement.value;
+  ```
+- Πέρασμα αντικειμένου με χαρακτηριστικά `next`, `error` και `complete` και τιμές τα αντίστοιχα callbacks σαν όρισμα στο subscribe στην κλήση του `HttpClient` που γίνεται διαμέσου του `AppService`:
+  ```typescript
+  ... this.service.action(parameters).subscribe({
+    next: (data) => {
+      // do something with data
+    },
+    error: (error) => {
+      // handle the error
+    },
+    complete: () => {
+      // The operation completed
+    });
+  ```
 
 ## 11. CRUD users: List Users
 
