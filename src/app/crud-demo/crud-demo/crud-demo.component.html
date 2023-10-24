@@ -47,7 +47,7 @@
     <app-update-user></app-update-user>
   </ng-container>
   <ng-container *ngSwitchCase="'delete'">
-    <app-delete-user></app-delete-user>
+    <app-delete-user (userDeleted)="listUsers()"></app-delete-user>
   </ng-container>
   <ng-container *ngSwitchCase="'list'">
     <app-list-users></app-list-users>

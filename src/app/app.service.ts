@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Person } from './interfaces/person';
+import { DeleteUserComponent } from './crud-demo/delete-user/delete-user.component';
 
 @Injectable({
   providedIn: 'root',
@@ -18,5 +19,9 @@ export class AppService {
 
   addUser(user: Person) {
     return this.http.post<Person>('http://localhost:3000/users', user);
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete<Person>(`http://localhost:3000/users/${id}`);
   }
 }

@@ -64,15 +64,6 @@
       "photoURL": "https://i.pravatar.cc/?img=7"
     },
     {
-      "id": 8,
-      "givenName": "Julie",
-      "surName": "Johnson",
-      "age": 48,
-      "email": "julie.johnson@example.com",
-      "address": "321 Oak St",
-      "photoURL": "https://i.pravatar.cc/?img=8"
-    },
-    {
       "id": 9,
       "givenName": "Jerry",
       "surName": "Davis",
@@ -127,31 +118,22 @@
       "id": 14
     },
     {
-      "givenName": "kdsfkdjfkjd",
-      "surName": "ksjdhfslksdfh",
-      "age": "33",
-      "email": "sdkjfhsd@sldfj",
-      "address": "ads",
-      "photoURL": "",
+      "givenName": "ffffff",
+      "surName": "fffff",
+      "age": "22",
+      "email": "wed@ads",
+      "address": "sdadsa",
+      "photoURL": "asd",
       "id": 15
     },
     {
-      "givenName": "aaaaaaa",
-      "surName": "bbbbbb",
+      "givenName": "nnnnn",
+      "surName": "nnnnn",
       "age": "44",
-      "email": "ds@sdf",
-      "address": "ccccccc",
+      "email": "dfs@fds",
+      "address": "sfddsf",
       "photoURL": "",
       "id": 16
-    },
-    {
-      "givenName": "Xristos",
-      "surName": "Papadopoulos",
-      "age": "33",
-      "email": "kostas@example.com",
-      "address": "Athens, Greece",
-      "photoURL": "",
-      "id": 17
     }
   ]
 }
