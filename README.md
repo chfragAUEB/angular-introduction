@@ -1,5 +1,10 @@
 # Εισαγωγή στo Angular Framework
 
+## 14. CRUD users: Delete 
+
+- Σχεδόν ίδια περίπτωση με το branch 12-Users-CRUD-Read-Users
+- Χρησιμοποιούμε την ίδια υπο-φόρμα που ζητά το user id και στη συνέχεια αντί να αναζητήσει με σκοπό τη μεταφορά των δεδομένων στο template καλεί τη διαδικασία της διαγραφής από το AppService.
+
 ## 13. CRUD users: Create User
 
 - Άμεση χρήση του παραδείγματος της Reactive Form από το branch 08-Reactive-Forms
