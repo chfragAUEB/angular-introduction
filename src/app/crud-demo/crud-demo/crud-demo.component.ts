@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateUserComponent } from '../create-user/create-user.component';
-import { ReadUserComponent } from '../read-user/read-user.component';
-import { UpdateUserComponent } from '../update-user/update-user.component';
-import { DeleteUserComponent } from '../delete-user/delete-user.component';
-import { ListUsersComponent } from '../list-users/list-users.component';
+import { CreateUserComponent } from '../crud/create-user/create-user.component';
+import { ReadUserComponent } from '../crud/read-user/read-user.component';
+import { UpdateUserComponent } from '../crud/update-user/update-user.component';
+import { DeleteUserComponent } from '../crud/delete-user/delete-user.component';
+import { ListUsersComponent } from '../utils/list-users/list-users.component';
 
 @Component({
   selector: 'app-crud-demo',

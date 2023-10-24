@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Person } from './interfaces/person';
-import { DeleteUserComponent } from './crud-demo/delete-user/delete-user.component';
+import { DeleteUserComponent } from './crud-demo/crud/delete-user/delete-user.component';
 
 @Injectable({
   providedIn: 'root',
