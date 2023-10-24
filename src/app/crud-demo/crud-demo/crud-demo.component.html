@@ -45,7 +45,7 @@
       <app-read-user></app-read-user>
     </ng-container>
     <ng-container *ngSwitchCase="'update'">
-      <app-update-user></app-update-user>
+      <app-update-user (userUpdated)="listUsers()"></app-update-user>
     </ng-container>
     <ng-container *ngSwitchCase="'delete'">
       <app-delete-user (userDeleted)="listUsers()"></app-delete-user>
