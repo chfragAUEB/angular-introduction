@@ -1,5 +1,18 @@
 # Εισαγωγή στo Angular Framework
 
+## 17. CRUD users: Utility Components
+
+- Δημιουργία του `CrudUserSearchComponent` στον κατάλογο `src/app/crud-demo/utils`. Πρόκειται για μεταφορά από το `ReadUserComponent` της λειτουργίας της αναζήτησης όπου ο χρήστης εισάγει στο πλαίσιο το id και με το πλήκτρο της αναζήτησης χρησιμοποιούμε το `AppService` για να ανασύρουμε από τη βάση τις πληροφορίες του χρήστη. Οι πληροφορίες του χρήστη μεταφέρονται στο component γονέα με κατάλληλο custom event που μεταφέρει data τύπου `Person`.
+- Δημιουργία του `DangerAreYouSureComponent` με σκοπό την εισαγωγή επιβεβαίωσης από το χρήστη πως είναι σύμφωνος για μια "καταστροφική" ενέργεια (π.χ. τη διαγραφή του χρήστη). Η επιβεβαίωση μεταφέρεται στο component γονέα με κατάλληλο custom event που μεταφέρει ένα boolean (true: ο χρήστης είναι σύμφωνος με την "καταστροφική" ενέργεια, αντίστοιχα για το false).
+
+## 16. CRUD users: Housekeeping
+
+- Από λάθος πληκτρολόγησης πήγαμε από το 14 στο 16
+- Δημιουργήσαμε ένα υποκατάλογο `src/app/crud-demo/crud` με σκοπό να τακτοποιήσουμε εκεί όλα τα CRUD components (κατάλογοι `create-user`, `read-user`, `update-user`, `delete-user`)
+- Κάναμε drag and drop τα 4 directories από τον κατάλογο `src/app/crud-demo` στον κατάλογο `src/app/crud-demo/crud`
+- Δημιουργήσαμε υποκατάλογο `src/app/crud-demo/utils` και μετακινήσαμε εκεί με drag and drop τον κατάλογο `list-users`
+- Σε κάθε βήμα μετακίνησης ο VSCODE μας βοηθάει με κατάληλα μηνύματα και ενημερώνει τα import paths όπου χρειάζεται. Αρκεί να αποδεχτούμε τις προτροπές "Update imports for ...?" για να βρεθούμε ξανά σε λειοτυργική κατάσταση
+
 ## 14. CRUD users: Delete 
 
 - Σχεδόν ίδια περίπτωση με το branch 12-Users-CRUD-Read-Users
