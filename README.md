@@ -18,6 +18,19 @@
       photoURL: new FormControl(''),
     });
   ```
+- Το `CrudUserFormComponent` διαφέρει από το `ReactiveFormComponent` και σε ένα άλλο σημείο: δέχεται σαν Input τα στοιχεία του χρήστη που ενδεχομένως να επεξεργαστεί η φόρμα (αν δεν περάσει κάποια τιμή στο Input τότε η φόρμα θα χρησιμοποιηθεί για τη δημιουργία χρήστη, ενώ αν περάσει Input τότε η φόρμα θα επεξεργαστεί τα στοιχεία του χρήστη).
+- Στην περίπτωση που περάσει κάποιο Input τότε χρειάζεται να επέμβουμε στο χαρακτηριστικό `form` και να αλλάξουμε τις τιμές των πεδίων του ώστε να μην είναι κενά αλλά να περιέχουν πλέον τα δεδομένα του χρήστη που πέρασε σαν Input. Αυτό γίνεται αν η κλάση του component υλοποιήσει το interface `OnChanges`:
+  ```typescript
+  export class CrudUserFormComponent implements OnChanges {
+  ...
+  @Input() personInput: Person | undefined;
+  ...
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['personInput']?.currentValue) {
+      this.form.patchValue(changes['personInput'].currentValue);
+    }
+  }
+  ```
 
 ## 17. CRUD users: Utility Components
 
