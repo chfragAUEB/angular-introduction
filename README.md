@@ -1,5 +1,13 @@
 # Εισαγωγή στo Angular Framework
 
+## 16. CRUD users: Housekeeping
+
+- Από λάθος πληκτρολόγησης πήγαμε από το 14 στο 16
+- Δημιουργήσαμε ένα υποκατάλογο `src/app/crud-demo/crud` με σκοπό να τακτοποιήσουμε εκεί όλα τα CRUD components (κατάλογοι `create-user`, `read-user`, `update-user`, `delete-user`)
+- Κάναμε drag and drop τα 4 directories από τον κατάλογο `src/app/crud-demo` στον κατάλογο `src/app/crud-demo/crud`
+- Δημιουργήσαμε υποκατάλογο `src/app/crud-demo/utils` και μετακινήσαμε εκεί με drag and drop τον κατάλογο `list-users`
+- Σε κάθε βήμα μετακίνησης ο VSCODE μας βοηθάει με κατάληλα μηνύματα και ενημερώνει τα import paths όπου χρειάζεται. Αρκεί να αποδεχτούμε τις προτροπές "Update imports for ...?" για να βρεθούμε ξανά σε λειοτυργική κατάσταση
+
 ## 14. CRUD users: Delete 
 
 - Σχεδόν ίδια περίπτωση με το branch 12-Users-CRUD-Read-Users
