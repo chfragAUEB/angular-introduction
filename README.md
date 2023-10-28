@@ -3,21 +3,21 @@
 ## 18. CRUD users: Update User
 
 - Δημιουργία του `CrudUserFormComponent` στον κατάλογο `src/app/crud-demo/utils`. Πρακτικά αντιγράψαμε το component από το `08-Reactive-Forms` branch. Καθώς όμως πρόκειται για την περίπτωση του Update χρειάζεται να επέμβουμε στο `FormGroup` και να προσθέσουμε το πεδίο `id` γιατί μόνο έτσι θα είναι εφικτή η πράξη του Update (μεταβολή των στοιχείων του χρήστη με το **συγκεκριμένο id**):
-```typescript
-form = new FormGroup({
-    id: new FormControl(0),     // Είναι απαραίτητη αυτή η εισαγωγή για το Update!
-    givenName: new FormControl('', Validators.required),
-    surName: new FormControl('', Validators.required),
-    age: new FormControl(0, [
-      Validators.required,
-      Validators.min(18),
-      Validators.max(120),
-    ]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    address: new FormControl('', Validators.required),
-    photoURL: new FormControl(''),
-  });
-```
+  ```typescript
+  form = new FormGroup({
+      id: new FormControl(0),     // Είναι απαραίτητη αυτή η εισαγωγή για το Update!
+      givenName: new FormControl('', Validators.required),
+      surName: new FormControl('', Validators.required),
+      age: new FormControl(0, [
+        Validators.required,
+        Validators.min(18),
+        Validators.max(120),
+      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      address: new FormControl('', Validators.required),
+      photoURL: new FormControl(''),
+    });
+  ```
 
 ## 17. CRUD users: Utility Components
 
