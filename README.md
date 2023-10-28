@@ -34,11 +34,33 @@
 - Στη μέθοδο `ngOnChanges` περνά αυτόματα σαν παράμετρος το αντικείμενο `changes` που περιέχει σαν χαρακτηριστικά όλα τα ορισμένα Input του component. Στην περίπτωσή μας το Input `personInput` είναι προσβάσιμο με `changes['personInput']` (δεν χρησιμοποιείται το dot notation γιατί το Angular Framework δεν είναι δυνατό να γνωρίζει εκ των προτέρων το όνομα που θα δώσουμε στο Input).
 - Η τιμή του Input είναι προσβάσιμη με το `changes['personInput']?.currentValue`.
 - Χρησιμοποιούμε την τιμή σε συνδυασμό με το `patchValue` του αντικειμένου form για να αρχικοποιήσουμε τις τιμές των πεδίων της φόρμας με τα δεδομένα που πέρασαν σαν Input
+- Ενημέρωση του `AppService` για τη διαδικασία του Update:
+  ```typescript
+  updateUser(user: Person) {
+    console.log('SERVICE', user);
+    return this.http.put<Person>(`${API}/${user.id}`, user);
+  }
+  ```
 
 ## 17. CRUD users: Utility Components
 
 - Δημιουργία του `CrudUserSearchComponent` στον κατάλογο `src/app/crud-demo/utils`. Πρόκειται για μεταφορά από το `ReadUserComponent` της λειτουργίας της αναζήτησης όπου ο χρήστης εισάγει στο πλαίσιο το id και με το πλήκτρο της αναζήτησης χρησιμοποιούμε το `AppService` για να ανασύρουμε από τη βάση τις πληροφορίες του χρήστη. Οι πληροφορίες του χρήστη μεταφέρονται στο component γονέα με κατάλληλο custom event που μεταφέρει data τύπου `Person`.
 - Δημιουργία του `DangerAreYouSureComponent` με σκοπό την εισαγωγή επιβεβαίωσης από το χρήστη πως είναι σύμφωνος για μια "καταστροφική" ενέργεια (π.χ. τη διαγραφή του χρήστη). Η επιβεβαίωση μεταφέρεται στο component γονέα με κατάλληλο custom event που μεταφέρει ένα boolean (true: ο χρήστης είναι σύμφωνος με την "καταστροφική" ενέργεια, αντίστοιχα για το false).
+- Χρήση των δύο νέων component στο `DeleteUSerComponent`:
+    ```html
+    <div class="d-flex flex-column gap-2">
+      <app-crud-user-search
+        (userFound)="onUserFound($event)"
+      ></app-crud-user-search>
+    
+      <div *ngIf="foundUser" class="d-flex flex-column gap-2">
+        <app-person-card [person]="foundUser"></app-person-card>
+        <app-danger-are-you-sure
+          (confirm)="onConfirm($event)"
+        ></app-danger-are-you-sure>
+      </div>
+    </div>
+    ```
 
 ## 16. CRUD users: Housekeeping
 
