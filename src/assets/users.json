@@ -22,7 +22,7 @@
       "id": 3,
       "givenName": "Jim",
       "surName": "Brown",
-      "age": 45,
+      "age": "33",
       "email": "jim.brown@example.com",
       "address": "456 Park Ave",
       "photoURL": "https://i.pravatar.cc/?img=3"
@@ -98,6 +98,15 @@
       "email": "peter@wxample.com",
       "address": "Athens",
       "photoURL": "https://i.pravatar.cc/?img=44"
+    },
+    {
+      "id": 14,
+      "givenName": "test",
+      "surName": "τεστ",
+      "age": "34",
+      "email": "skfdhj@dskfh",
+      "address": "dsdfs",
+      "photoURL": "fsd"
     }
   ]
 }

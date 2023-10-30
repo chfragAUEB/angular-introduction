@@ -1,1 +1,5 @@
-<app-reactive-form (person)="onUser($event)"></app-reactive-form>
+<!-- <app-reactive-form (person)="onUser($event)"></app-reactive-form> -->
+<app-crud-user-form
+  [title]="'Create User'"
+  (person)="onUser($event)"
+></app-crud-user-form>
