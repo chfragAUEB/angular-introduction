@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <mat-toolbar style="width: 16rem"
+      >Examples
+      <span class="spacer"></span>
+      <button
+        mat-icon-button
+        (click)="drawer.close()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">A menu item</a>
+      <mat-expansion-panel
+        style="box-shadow: none; font-size: 16px; margin-left: 0"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title> A menu item with subitems</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <a mat-list-item href="#">Item 1</a>
+        <a mat-list-item href="#">Item 2</a>
+        <a mat-list-item href="#">Item 3</a>
+      </mat-expansion-panel>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content style="display: flex; flex-direction: column; gap: 1rem">
+    <mat-toolbar color="primary">
+      <button
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+        style="margin-right: 1rem"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Angular Introduction</span>
+    </mat-toolbar>
+    <div class="container">Component Container</div>
+    <footer class="footer">
+      <span>&copy; 2023 Coding Factory 4</span>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
