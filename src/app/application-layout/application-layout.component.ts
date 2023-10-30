@@ -8,6 +8,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-application-layout',
@@ -19,6 +20,7 @@ import { map, shareReplay } from 'rxjs/operators';
     MatListModule,
     MatIconModule,
     MatExpansionModule,
+    RouterModule,
   ],
   templateUrl: './application-layout.component.html',
   styleUrls: ['./application-layout.component.css'],
