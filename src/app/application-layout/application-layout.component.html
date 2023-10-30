@@ -26,16 +26,14 @@
         style="box-shadow: none; font-size: 16px; margin-left: 0"
       >
         <mat-expansion-panel-header>
-          <mat-panel-title> A menu item with subitems</mat-panel-title>
+          <mat-panel-title> CRUD demo</mat-panel-title>
         </mat-expansion-panel-header>
 
-        <a mat-list-item href="#">Item 1</a>
-        <a mat-list-item href="#">Item 2</a>
-        <a mat-list-item href="#">Item 3</a>
-        <a mat-list-item href="#">Item 3</a>
-        <a mat-list-item href="#">Item 3</a>
-        <a mat-list-item href="#">Item 3</a>
-        <a mat-list-item href="#">Item 3</a>
+        <a mat-list-item routerLink="crud-demo/create">Create</a>
+        <a mat-list-item routerLink="crud-demo/read">Read</a>
+        <a mat-list-item routerLink="crud-demo/update">Update</a>
+        <a mat-list-item routerLink="crud-demo/delete">Delete</a>
+        <a mat-list-item routerLink="crud-demo/list">List</a>
       </mat-expansion-panel>
     </mat-nav-list>
   </mat-sidenav>
