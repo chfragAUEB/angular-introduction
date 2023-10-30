@@ -1,34 +1,32 @@
-<div class="border border-2 border-secondary m-2">
-  <div class="bg-info text-center">Event Bind Component</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Event Binding Example</mat-card-title>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="fx-layout-column fx-gap--10px">
+      <div class="fx-layout-row fx-align--x-center fx-gap--10px">
+        <div>Button is clicked {{ times }} times</div>
 
-  <div class="row mt-2 p-2">
-    <div class="col">
-      <p>Button is clicked {{ times }} times</p>
-    </div>
+        <button mat-raised-button color="primary" (click)="increaseCounter()">
+          Click me
+        </button>
 
-    <div class="col">
-      <button (click)="increaseCounter()" class="btn btn-primary">
-        Click me
-      </button>
-    </div>
+        <button mat-raised-button color="warn" (click)="resetCounter()">
+          Reset Counter
+        </button>
+      </div>
+      <div class="fx-layout-row fx-align--x-center fx-gap--10px">
+        <div>
+          <mat-form-field>
+            <mat-label>Start typing here</mat-label>
+            <input matInput [value]="userInput" (input)="onUserInput($event)" />
+          </mat-form-field>
+        </div>
 
-    <div class="col">
-      <button (click)="resetCounter()" class="ms-2 btn btn-danger">
-        Reset Counter
-      </button>
+        <p>{{ userInput }}</p>
+      </div>
     </div>
-  </div>
-
-  <div class="row mt-2 p-2">
-    <div class="col">
-      {{ userInput }}
-    </div>
-    <div class="col">
-      <input
-        class="form-control"
-        [value]="userInput"
-        (input)="onUserInput($event)"
-      />
-    </div>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>
