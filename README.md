@@ -1,5 +1,61 @@
 # Εισαγωγή στo Angular Framework
 
+## 21. Porting Components to Angular Material
+
+- `npm i css-fx-layout` για να μπορούμε εύκολα να χρησιμοποιούμε το flexbox στα template:
+  1. styles.css -> styles.scss (angular.json)
+  2. προσθήκες από το https://t.ly/UFt0D
+- Εκκαθάριση του `app.component.ts` (πλέον έχουμε υλοποιήσει routing μέσω του `app.routes.ts` και μόνο εκεί θα γίνονται import τα components που αφορούν στο μενού)
+- Porting του `EventBindComponent`:
+
+  1. Προσθήκη route στο `app.routes.ts`:
+
+  ```typescript
+  import { Routes } from "@angular/router";
+
+  import { WelcomeComponent } from "./welcome/welcome.component";
+  import { EventBindComponent } from "./event-bind/event-bind.component";
+
+  export const routes: Routes = [
+    { path: "home", component: WelcomeComponent },
+    { path: "event-bind", component: EventBindComponent },
+  ];
+  ```
+
+  2. Προσθήκη επιλογής στο μενού της εφαρμογής (`application-layout.component.html`) προς το path του route με χρήση του `routerLink`:
+
+  ```html
+  ...
+  <a mat-list-item routerLink="home">Home</a>
+  <a mat-list-item routerLink="event-bind">Event Binding</a>
+  ...
+  ```
+
+  3. Χρήση του Angular material και του `css-fx-Layout` στο template του `EventBindingComponent`
+
+- Porting του Crud demo:
+
+  1. Αλλαγή στο template του `ApplicationLayoutComponent` στο μενού με τις υποεπιλογές:
+
+  ```html
+    <mat-expansion-panel-header>
+        <mat-panel-title> CRUD Demo </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <a mat-list-item routerLink="crud-demo/create">Create</a>
+      <a mat-list-item routerLink="crud-demo/read">Read</a>
+      <a mat-list-item routerLink="crud-demo/update">Update</a>
+      <a mat-list-item routerLink="crud-demo/delete">Delete</a>
+      <a mat-list-item routerLink="crud-demo/delete">List</a>
+    </mat-expansion-panel>
+  ```
+
+  2. Δημιουργία των routes στο αρχείο `app.routes.ts`
+
+  3. Μεταφορά του `ListUsersComponent` στο Angular material και χρήση του `MatTable`
+
+  4. Μεταφορά του `CrudUserSearch` στο Angular Material
+
 ## 20. Router Module primer
 
 - Σκοπός μας είναι να κάνουμε επιλογές από το μενού στα αριστερά και τα component να εμφανίζονται στο χώρο δεξιά.
