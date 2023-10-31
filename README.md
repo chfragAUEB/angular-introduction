@@ -1,5 +1,50 @@
 # Εισαγωγή στo Angular Framework
 
+## 19. Angular Material UI
+
+- Ενσωμάτωση του [Angular Material UI](https://material.angular.io/)
+
+  - ```bash
+    ng add @angular/material
+
+    ℹ Using package manager: npm
+    ✔ Found compatible package version: @angular/material@16.2.10.
+    ✔ Package information loaded.
+
+    The package @angular/material@16.2.10 will be installed and executed.
+    Would you like to proceed? Yes
+    ✔ Packages successfully installed.
+    ? Choose a prebuilt theme name, or "custom" for a custom theme: Indigo/Pink
+      [ Preview: https://material.angular.io?theme=indigo-pink ]
+    ? Set up global Angular Material typography styles? Yes
+    ? Include the Angular animations module? Include and enable animations
+    UPDATE package.json (1146 bytes)
+    ✔ Packages installed successfully.
+    UPDATE src/app/app.config.ts (328 bytes)
+    UPDATE angular.json (3151 bytes)
+    UPDATE src/index.html (587 bytes)
+    UPDATE src/styles.css (214 bytes)
+    ```
+
+  - Διαγράφουμε τις ρυθμίσεις του bootstrap στο `angular.json`:
+    ```json
+    ...
+    "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css"
+            ],
+    "scripts": []
+    ...
+    ```
+  - Δημιουργούμε ένα νέο component που θα περιέχει το material design layout της εφαρμογής μας (component, template, css):
+    ```bash
+    ng g c application-layout
+    ```
+  - Στο `app.component.html` έχουμε μόνο ένα component (αφού συμπεριλαμβάνουμε το `ApplicationLayoutComponent` στον πίνακα `imports` του `app.component.ts`):
+    ```html
+    <app-application-layout></app-application-layout>
+    ```
+
 ## 18. CRUD users: Update User
 
 - Δημιουργία του `CrudUserFormComponent` στον κατάλογο `src/app/crud-demo/utils`. Πρακτικά αντιγράψαμε το component από το `08-Reactive-Forms` branch. Καθώς όμως πρόκειται για την περίπτωση του Update χρειάζεται να επέμβουμε στο `FormGroup` και να προσθέσουμε το πεδίο `id` γιατί μόνο έτσι θα είναι εφικτή η πράξη του Update (μεταβολή των στοιχείων του χρήστη με το **συγκεκριμένο id**):
