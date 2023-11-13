@@ -9,11 +9,14 @@ import {
 import { CommonModule } from '@angular/common';
 import { AppService } from 'src/app/app.service';
 import { Person } from 'src/app/interfaces/person';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-crud-user-search',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatInputModule, MatButtonModule, MatFormFieldModule],
   templateUrl: './crud-user-search.component.html',
   styleUrls: ['./crud-user-search.component.css'],
 })

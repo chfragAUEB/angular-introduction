@@ -4,6 +4,7 @@ import { CrudUserSearchComponent } from '../../utils/crud-user-search/crud-user-
 import { Person } from 'src/app/interfaces/person';
 import { CrudUserFormComponent } from '../../utils/crud-user-form/crud-user-form.component';
 import { AppService } from 'src/app/app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-user',
@@ -16,7 +17,10 @@ export class UpdateUserComponent {
   @Output() userUpdated = new EventEmitter();
   foundUser: Person | undefined;
 
-  constructor(private appService: AppService = Inject(AppService)) {}
+  constructor(
+    private appService: AppService = Inject(AppService),
+    private router: Router
+  ) {}
 
   onUserFound(user: Person | undefined) {
     if (user) {
@@ -30,6 +34,7 @@ export class UpdateUserComponent {
     this.appService.updateUser(user).subscribe((user) => {
       console.log(user);
       this.userUpdated.emit();
+      this.router.navigate(['/crud-demo/list']);
     });
   }
 }

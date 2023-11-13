@@ -14,11 +14,20 @@ import {
   Validators,
 } from '@angular/forms';
 import { Person } from 'src/app/interfaces/person';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-crud-user-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
   templateUrl: './crud-user-form.component.html',
   styleUrls: ['./crud-user-form.component.css'],
 })

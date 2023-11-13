@@ -1,8 +1,16 @@
-<div class="d-flex flex-column gap-2">
-  <div class="form-group">
-    <label class="form-label"> Search for User id </label>
-    <input type="number" class="form-control" #userId />
-    <div *ngIf="userNotFound" class="text-danger">User Id not found!</div>
-    <button (click)="onSearch()" class="btn btn-primary mt-2">Search</button>
+<div class="fx-layout-column" style="padding: 1em 0 1em 0">
+  <div>
+    <mat-form-field>
+      <mat-label>Search for User id</mat-label>
+      <input matInput type="number" #userId />
+    </mat-form-field>
+  </div>
+  <div class="error fx-align--x-center">
+    <p *ngIf="userNotFound">User Id not found!</p>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" (click)="onSearch()">
+      Search
+    </button>
   </div>
 </div>
