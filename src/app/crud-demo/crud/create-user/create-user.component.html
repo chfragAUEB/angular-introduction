@@ -1,5 +1,12 @@
-<!-- <app-reactive-form (person)="onUser($event)"></app-reactive-form> -->
-<app-crud-user-form
-  [title]="'Create User'"
-  (person)="onUser($event)"
-></app-crud-user-form>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> CRUD demo </mat-card-title>
+    <mat-card-subtitle> Create User </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <app-crud-user-form
+      [title]="'Create User'"
+      (person)="onUser($event)"
+    ></app-crud-user-form>
+  </mat-card-content>
+</mat-card>

@@ -1,20 +1,25 @@
-import { Component, EventEmitter, Inject, Output } from '@angular/core';
+import { Component, EventEmitter, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CrudUserSearchComponent } from '../../utils/crud-user-search/crud-user-search.component';
 import { Person } from 'src/app/interfaces/person';
 import { CrudUserFormComponent } from '../../utils/crud-user-form/crud-user-form.component';
 import { AppService } from 'src/app/app.service';
 import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-update-user',
   standalone: true,
-  imports: [CommonModule, CrudUserSearchComponent, CrudUserFormComponent],
+  imports: [
+    CommonModule,
+    CrudUserSearchComponent,
+    CrudUserFormComponent,
+    MatCardModule,
+  ],
   templateUrl: './update-user.component.html',
   styleUrls: ['./update-user.component.css'],
 })
 export class UpdateUserComponent {
-  @Output() userUpdated = new EventEmitter();
   foundUser: Person | undefined;
 
   constructor(
@@ -26,6 +31,8 @@ export class UpdateUserComponent {
     if (user) {
       this.foundUser = user;
       console.log('onUserFound', this.foundUser);
+    } else {
+      this.foundUser = undefined;
     }
   }
 
@@ -33,7 +40,6 @@ export class UpdateUserComponent {
     console.log('onUpdate', user);
     this.appService.updateUser(user).subscribe((user) => {
       console.log(user);
-      this.userUpdated.emit();
       this.router.navigate(['/crud-demo/list']);
     });
   }

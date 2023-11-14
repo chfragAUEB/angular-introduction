@@ -1,4 +1,38 @@
-<div class="card text-white bg-danger mb-3" style="max-width: 18 rem">
+<mat-card style="max-width: 400px">
+  <mat-card-header>
+    <mat-card-title>
+      {{ header }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ title }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    {{ body }}
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <div class="fx-layout-row fx-gap--4px">
+      <button
+        mat-button
+        (click)="onClick(false)"
+        mat-raised-button
+        color="primary"
+      >
+        No
+      </button>
+      <button
+        mat-button
+        (click)="onClick(true)"
+        mat-raised-button
+        color="accent"
+      >
+        Yes
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+
+<!-- <div class="card text-white bg-danger mb-3" style="max-width: 18 rem">
   <div class="card-header">{{ header }}</div>
   <div class="card-body">
     <h5 class="card-title">
@@ -12,4 +46,4 @@
       <button (click)="onClick(true)" class="btn btn-secondary">Yes</button>
     </div>
   </div>
-</div>
+</div> -->

@@ -17,6 +17,7 @@ import { Person } from 'src/app/interfaces/person';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-crud-user-form',
@@ -27,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
   ],
   templateUrl: './crud-user-form.component.html',
   styleUrls: ['./crud-user-form.component.css'],
