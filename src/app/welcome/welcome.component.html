@@ -10,4 +10,24 @@
     <p>Welcome to Angular Instroduction. Nice to have you here</p>
     <p>Please select an example from the left menu</p>
   </mat-card-content>
+  <mat-card-actions>
+    <button
+      *ngIf="!(isLoggedIn$ | async)"
+      mat-button
+      mat-raised-button
+      color="primary"
+      (click)="login()"
+    >
+      Login
+    </button>
+    <button
+      *ngIf="isLoggedIn$ | async"
+      mat-button
+      mat-raised-button
+      color="primary"
+      (click)="logout()"
+    >
+      Logout
+    </button>
+  </mat-card-actions>
 </mat-card>

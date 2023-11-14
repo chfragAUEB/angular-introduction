@@ -49,6 +49,11 @@
         <mat-icon>menu</mat-icon>
       </button>
       <span>Angular Introduction</span>
+      <span class="spacer"></span>
+      <button *ngIf="!(isLoggedIn$ | async)" mat-icon-button routerLink="login">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <span *ngIf="isLoggedIn$ | async">{{ fullname$ | async }}</span>
     </mat-toolbar>
     <div class="container"><router-outlet></router-outlet></div>
     <footer class="footer">
