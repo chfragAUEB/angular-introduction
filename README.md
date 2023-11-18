@@ -1,5 +1,7 @@
 # Εισαγωγή στo Angular Framework
 
+## 22. JWT Authentication
+
 ## 21. Porting Components to Angular Material
 
 - `npm i css-fx-layout` για να μπορούμε εύκολα να χρησιμοποιούμε το flexbox στα template:
@@ -170,18 +172,14 @@
 - Δημιουργία του `CrudUserFormComponent` στον κατάλογο `src/app/crud-demo/utils`. Πρακτικά αντιγράψαμε το component από το `08-Reactive-Forms` branch. Καθώς όμως πρόκειται για την περίπτωση του Update χρειάζεται να επέμβουμε στο `FormGroup` και να προσθέσουμε το πεδίο `id` γιατί μόνο έτσι θα είναι εφικτή η πράξη του Update (μεταβολή των στοιχείων του χρήστη με το **συγκεκριμένο id**):
   ```typescript
   form = new FormGroup({
-      id: new FormControl(0),     // Είναι απαραίτητη αυτή η εισαγωγή για το Update!
-      givenName: new FormControl('', Validators.required),
-      surName: new FormControl('', Validators.required),
-      age: new FormControl(0, [
-        Validators.required,
-        Validators.min(18),
-        Validators.max(120),
-      ]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      address: new FormControl('', Validators.required),
-      photoURL: new FormControl(''),
-    });
+    id: new FormControl(0), // Είναι απαραίτητη αυτή η εισαγωγή για το Update!
+    givenName: new FormControl("", Validators.required),
+    surName: new FormControl("", Validators.required),
+    age: new FormControl(0, [Validators.required, Validators.min(18), Validators.max(120)]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    address: new FormControl("", Validators.required),
+    photoURL: new FormControl(""),
+  });
   ```
 - Το `CrudUserFormComponent` διαφέρει από το `ReactiveFormComponent` και σε ένα άλλο σημείο: δέχεται σαν Input τα στοιχεία του χρήστη που ενδεχομένως να επεξεργαστεί η φόρμα (αν δεν περάσει κάποια τιμή στο Input τότε η φόρμα θα χρησιμοποιηθεί για τη δημιουργία χρήστη, ενώ αν περάσει Input τότε η φόρμα θα επεξεργαστεί τα στοιχεία του χρήστη).
 - Στην περίπτωση που περάσει κάποιο Input τότε χρειάζεται να επέμβουμε στο χαρακτηριστικό `form` και να αλλάξουμε τις τιμές των πεδίων του ώστε να μην είναι κενά αλλά να περιέχουν πλέον τα δεδομένα του χρήστη που πέρασε σαν Input. Αυτό γίνεται αν η κλάση του component υλοποιήσει το interface `OnChanges`:
@@ -212,20 +210,16 @@
 - Δημιουργία του `CrudUserSearchComponent` στον κατάλογο `src/app/crud-demo/utils`. Πρόκειται για μεταφορά από το `ReadUserComponent` της λειτουργίας της αναζήτησης όπου ο χρήστης εισάγει στο πλαίσιο το id και με το πλήκτρο της αναζήτησης χρησιμοποιούμε το `AppService` για να ανασύρουμε από τη βάση τις πληροφορίες του χρήστη. Οι πληροφορίες του χρήστη μεταφέρονται στο component γονέα με κατάλληλο custom event που μεταφέρει data τύπου `Person`.
 - Δημιουργία του `DangerAreYouSureComponent` με σκοπό την εισαγωγή επιβεβαίωσης από το χρήστη πως είναι σύμφωνος για μια "καταστροφική" ενέργεια (π.χ. τη διαγραφή του χρήστη). Η επιβεβαίωση μεταφέρεται στο component γονέα με κατάλληλο custom event που μεταφέρει ένα boolean (true: ο χρήστης είναι σύμφωνος με την "καταστροφική" ενέργεια, αντίστοιχα για το false).
 - Χρήση των δύο νέων component στο `DeleteUSerComponent`:
-    ```html
-    <div class="d-flex flex-column gap-2">
-      <app-crud-user-search
-        (userFound)="onUserFound($event)"
-      ></app-crud-user-search>
-    
-      <div *ngIf="foundUser" class="d-flex flex-column gap-2">
-        <app-person-card [person]="foundUser"></app-person-card>
-        <app-danger-are-you-sure
-          (confirm)="onConfirm($event)"
-        ></app-danger-are-you-sure>
-      </div>
+  ```html
+  <div class="d-flex flex-column gap-2">
+    <app-crud-user-search (userFound)="onUserFound($event)"></app-crud-user-search>
+
+    <div *ngIf="foundUser" class="d-flex flex-column gap-2">
+      <app-person-card [person]="foundUser"></app-person-card>
+      <app-danger-are-you-sure (confirm)="onConfirm($event)"></app-danger-are-you-sure>
     </div>
-    ```
+  </div>
+  ```
 
 ## 16. CRUD users: Housekeeping
 
@@ -235,7 +229,7 @@
 - Δημιουργήσαμε υποκατάλογο `src/app/crud-demo/utils` και μετακινήσαμε εκεί με drag and drop τον κατάλογο `list-users`
 - Σε κάθε βήμα μετακίνησης ο VSCODE μας βοηθάει με κατάληλα μηνύματα και ενημερώνει τα import paths όπου χρειάζεται. Αρκεί να αποδεχτούμε τις προτροπές "Update imports for ...?" για να βρεθούμε ξανά σε λειοτυργική κατάσταση
 
-## 14. CRUD users: Delete 
+## 14. CRUD users: Delete
 
 - Σχεδόν ίδια περίπτωση με το branch 12-Users-CRUD-Read-Users
 - Χρησιμοποιούμε την ίδια υπο-φόρμα που ζητά το user id και στη συνέχεια αντί να αναζητήσει με σκοπό τη μεταφορά των δεδομένων στο template καλεί τη διαδικασία της διαγραφής από το AppService.

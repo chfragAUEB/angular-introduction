@@ -12,6 +12,10 @@ export class AuthGuard {
   ) {}
 
   canActivate() {
+    console.log(
+      'AUTHGUARD',
+      this.jwtHelper.isTokenExpired(localStorage.getItem('access_token'))
+    );
     if (
       this.appService.isLoggedIn.value &&
       !this.jwtHelper.isTokenExpired(localStorage.getItem('access_token'))
