@@ -5,11 +5,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { RouterModule } from '@angular/router';
 import { AppService } from '../app.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-application-layout',
@@ -20,7 +22,9 @@ import { AppService } from '../app.service';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatButtonModule,
     MatExpansionModule,
+    MatMenuModule,
     RouterModule,
   ],
   templateUrl: './application-layout.component.html',
@@ -40,4 +44,8 @@ export class ApplicationLayoutComponent {
     private breakpointObserver: BreakpointObserver,
     private appService: AppService = Inject(AppService)
   ) {}
+
+  logout() {
+    this.appService.logout();
+  }
 }

@@ -50,10 +50,21 @@
       </button>
       <span>Angular Introduction</span>
       <span class="spacer"></span>
-      <button *ngIf="!(isLoggedIn$ | async)" mat-icon-button routerLink="login">
+      <button
+        mat-icon-button
+        *ngIf="!(isLoggedIn$ | async)"
+        mat-icon-button
+        routerLink="login"
+      >
         <mat-icon>account_circle</mat-icon>
       </button>
-      <span *ngIf="isLoggedIn$ | async">{{ fullname$ | async }}</span>
+      <!-- <span *ngIf="isLoggedIn$ | async">{{ fullname$ | async }}</span> -->
+      <button *ngIf="isLoggedIn$ | async" mat-button [matMenuTriggerFor]="menu">
+        {{ fullname$ | async }}
+      </button>
+      <mat-menu #menu="matMenu">
+        <button (click)="logout()" mat-menu-item>Logout</button>
+      </mat-menu>
     </mat-toolbar>
     <div class="container"><router-outlet></router-outlet></div>
     <footer class="footer">
